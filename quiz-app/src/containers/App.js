@@ -1,8 +1,9 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import '../App.css';
+import Quiz from '../containers/quiz';
 import { BrowserRouter as Router, Link, Route, Switch } from 'react-router-dom'; 
-import Home from './home';
+import Home from '../containers/home';
+import Results from './results';
 
 function App() {
   return (
@@ -11,17 +12,11 @@ function App() {
         <Route exact path='/'>
           <Home/>
         </Route>
-        <Route path='/quiz/:id'>
-
-        </Route>
-        <Route path='/form'>
-
-        </Route>
         <Route path='/quiz'>
-
+          <Quiz />
         </Route>
         <Route path='/results'>
-
+          <Results />
         </Route>
       </Switch>
     </Router>
