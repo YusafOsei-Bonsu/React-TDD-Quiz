@@ -2,7 +2,8 @@ import React from 'react';
 import '../App.css';
 import Quiz from '../containers/quiz';
 import { BrowserRouter as Router, Link, Route, Switch } from 'react-router-dom'; 
-import Home from '../containers/home';
+import Start from '../components/start';
+import Form from '../components/form';
 import Results from './results';
 
 function App() {
@@ -10,7 +11,10 @@ function App() {
     <Router>
       <Switch>
         <Route exact path='/'>
-          <Home/>
+          <Start/>
+        </Route>
+        <Route exact path='/form'>
+          <Form/>
         </Route>
         <Route path='/quiz'>
           <Quiz />

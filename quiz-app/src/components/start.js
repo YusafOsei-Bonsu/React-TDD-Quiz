@@ -1,4 +1,5 @@
 import React from 'react';
+import '../styles/start.css';
 
 const Start = () => {
     return (
