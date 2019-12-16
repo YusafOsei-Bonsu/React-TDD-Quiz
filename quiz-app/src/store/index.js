@@ -8,8 +8,14 @@ const initialState = {
     quizData: []
 }
 // Initialise reducer
-const reducer = (state=initialState, action)=> {
-    return state
+const reducer = (state = initialState, action) => {
+    switch (action.type) {
+        case 'catDropDown':
+            // console.log( action.payload)
+            return Object.assign({}, state, { catDropDown: action.payload })
+            default:
+                return state
+            }
 }
 // Create and export store
 export const store = createStore(reducer, applyMiddleware(thunk));
