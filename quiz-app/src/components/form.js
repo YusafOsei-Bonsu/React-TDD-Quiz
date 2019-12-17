@@ -25,12 +25,12 @@ const Form = (props) => {
 
 const mapStateToProps = (state, ownProps) => {
     return { categories: state.catDropDown, justStore: ownProps, userName: state.users }
-    
+
 };
 //add an on change to add user name to data
 const mapDispatchToProps = (dispatch) => {
     return {
-        handleSubmit: (event, justStore, useHistory ) => {
+        handleSubmit: (event) => {
             event.preventDefault();
             let difficulty = event.target.difficulty.value;
             let topic = event.target.topic.value;

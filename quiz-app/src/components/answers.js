@@ -7,10 +7,10 @@ const Answers = (props) => {
     
     return ( 
         <div className='answers'>
-            <p>{answers[0]}</p>
-            <p>{answers[1]}</p>
-            <p>{answers[2]}</p>
-            <p>{answers[3]}</p>
+            <button>{answers[0]}</button>
+            <button>{answers[1]}</button>
+            <button>{answers[2]}</button>
+            <button>{answers[3]}</button>
         </div>
     );
 }
