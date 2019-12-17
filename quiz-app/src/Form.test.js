@@ -1,7 +1,7 @@
 import React from 'react'
 import renderer from 'react-test-renderer';
-import {shallow} from 'enzyme'
-import Form from './components/form'
+import {shallow} from 'enzyme';
+import Form from './components/form';
 
 describe('Form component', () => {
     let wrapper;
@@ -18,7 +18,7 @@ describe('Form component', () => {
         const tree = component.toJSON();
         expect(tree).toMatchSnapshot();
     });
-    
+
     // Checks if the drop-down box renders
     test('Dropdown box should render', () => expect(wrapper.find('select').length).toEqual(1));
 
