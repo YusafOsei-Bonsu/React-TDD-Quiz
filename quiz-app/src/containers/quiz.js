@@ -2,35 +2,25 @@ import React from 'react';
 import Answers from '../components/answers';
 import Questions from '../components/questions';
 import { connect } from 'react-redux';
+import { useParams } from 'react-router-dom';
 
-
-
-
-const Quiz = (props, theseProps) => {
-    console.log(theseProps)
-    let i = 0;
-    const counter = (i) => i++;
+const Quiz = (props) => {
+    let id = useParams();
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log('Before' + i)
-        counter(i);
-        
     }
-
-
-
     return (
         <div className='questionAndAnswer'>
-            <Questions results={props.results[i]} handle={handleSubmit} />
-            <Answers results={props.results[i]} />
+            <Questions results={props.results[id.id]} handle={handleSubmit} />
+            <Answers results={props.results[id.id]} />
         </div>
     );
 }
 
 
-const mapStateToProps = (state, ownProps) => {
-    return ({ results: state.quizData,theseProps:ownProps})
+const mapStateToProps = (state) => {
+    return ({ results: state.quizData })
 };
 
 export default connect(mapStateToProps)(Quiz);
