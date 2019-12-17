@@ -14,7 +14,7 @@ const Form = (props) => {
                 <input type="radio" name="difficulty" value="easy" />
                 <input type="radio" name="difficulty" value="medium" />
                 <input type="radio" name="difficulty" value="hard" /><br/>
-                <input type='text' placeholder='player1' /><br/>
+                <input onChange={props.handleChange} type='text' placeholder='player1' /><br/>
                 <input type="submit" value="Go" />
             </form>
         </div>
@@ -32,6 +32,10 @@ const mapDispatchToProps = (dispatch) => {
             let difficulty = event.target.difficulty.value;
             let topic = event.target.topic.value;
             dispatch(getQuizData(topic, difficulty));
+        },
+        handleChange: (event) => {
+            let name = event.target.value;
+            dispatch({ type: 'addUser', payload: name })
         }
     }
 }

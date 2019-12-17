@@ -17,6 +17,7 @@ const initialState = {
 // Initialize reducer. The reducer is the only way to communicate with state.
 // It takes an action creates new state object, then updates the new state object. 
 const reducer = (state = initialState, action) => {
+    console.log(action.payload)
     switch (action.type) {
         case 'catDropDown':
             // console.log( action.payload)
