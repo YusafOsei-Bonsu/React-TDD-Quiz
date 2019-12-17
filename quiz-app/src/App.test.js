@@ -1,6 +1,7 @@
 import React from 'react';
-import { render } from '@testing-library/react';
-import App from './App';
+import App from './containers/App';
+import { shallow } from 'enzyme';
+import { BrowserRouter as Router } from 'react-router-dom';
 
 test('renders learn react link', () => {
   const { getByText } = render(<App />);
