@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import '../App.css';
 import Quiz from '../containers/quiz';
 import { persistor } from './../store';
-import { BrowserRouter as Router, Link, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Start from '../components/start';
 import Form from '../components/form';
 import Results from './results';
