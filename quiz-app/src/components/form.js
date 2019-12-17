@@ -10,13 +10,14 @@ const Form = () => {
                     <option value="saab">Saab</option>
                     <option value="fiat">Fiat</option>
                     <option value="audi">Audi</option>
-                </select><br/>
+                </select>
+                <br />
                 <div className='levelInputs'>
-                <input type="radio" name="difficulty" value="easy" />
-                <input type="radio" name="difficulty" value="medium" />
-                <input type="radio" name="difficulty" value="hard" /><br/>   
+                    <input type="radio" name="difficulty" value="easy" />
+                    <input type="radio" name="difficulty" value="medium" />
+                    <input type="radio" name="difficulty" value="hard" />
+                    <br />   
                 </div>
-
                 <input id="textbox" type='text' placeholder='player1' />
             </form>
         </div>
