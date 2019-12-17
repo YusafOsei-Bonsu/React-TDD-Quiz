@@ -1,8 +1,9 @@
 import React from 'react';
 import Answers from '../components/answers';
 import Questions from '../components/questions';
+import { connect } from 'react-redux';
 
-const Quiz = ({results}) => {
+const Quiz = (props) => {
     let i = 0;
     const counter = (i) => i++;
 
@@ -13,10 +14,12 @@ const Quiz = ({results}) => {
         
     return (
         <div className='questionAndAnswer'>
-            <Questions results={results[i]}/>
-            <Answers results={results[i]}/>
+            <Questions results={props.results[i]}/>
+            <Answers results={props.results[i]}/>
         </div>
     );
 }
+const mapStateToProps = state => { 
+    return ({results: state.quizData})};
 
-export default Quiz;
+export default connect(mapStateToProps)(Quiz);

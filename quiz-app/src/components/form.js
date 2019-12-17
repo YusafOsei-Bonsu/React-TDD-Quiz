@@ -1,13 +1,15 @@
 import React from 'react';
 import '../styles/form.css';
 import { connect } from 'react-redux';
-import { getQuizData } from './api/'
+import { getQuizData } from './api/';
+import { useHistory } from 'react-router-dom';
 
 const Form = (props) => {
     let info = props.categories;
+    let history = useHistory();
     return (
         <div className='form'>
-            <form onSubmit={(event) => props.handleSubmit(event)}>
+            <form onSubmit={(event) => {props.handleSubmit(event); history.push('/quiz')}}>
                 <select name="topic">
                     {info.map((data) => { return <option key={data.id} value={data.id}>{data.name}</option> })}
                 </select><br />
@@ -22,12 +24,13 @@ const Form = (props) => {
 }
 
 const mapStateToProps = (state, ownProps) => {
-    return { categories: state.catDropDown, justStore: state, userName: state.users }
+    return { categories: state.catDropDown, justStore: ownProps, userName: state.users }
+    
 };
 //add an on change to add user name to data
 const mapDispatchToProps = (dispatch) => {
     return {
-        handleSubmit: (event) => {
+        handleSubmit: (event, justStore, useHistory ) => {
             event.preventDefault();
             let difficulty = event.target.difficulty.value;
             let topic = event.target.topic.value;
