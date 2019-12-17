@@ -24,7 +24,7 @@ class App extends Component {
             <Route exact path='/form'>
               <Form />
             </Route>
-            <Route path='/quiz'>
+            <Route path='/quiz/:id'>
               <Quiz />
             </Route>
             <Route path='/results'>
