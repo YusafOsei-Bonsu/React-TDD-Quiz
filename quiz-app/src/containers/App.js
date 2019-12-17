@@ -1,36 +1,39 @@
 import React, { Component } from 'react';
-// import './App.css';
-import { getCatData, getQuizData } from '../components/api';
+import { getCatData } from '../components/api';
 import { connect } from 'react-redux';
+import '../App.css';
+import Quiz from '../containers/quiz';
+import { persistor } from './../store';
+import { BrowserRouter as Router, Link, Route, Switch } from 'react-router-dom';
+import Start from '../components/start';
+import Form from '../components/form';
+import Results from './results';
+import { PersistGate } from 'redux-persist/integration/react';
 class App extends Component {
-  handleSubmit = (event, value) => {
-    event.preventDefault();
-    console.log('clicked ' + value)
-    this.props.dispatch(getQuizData(value));
-  }
   componentDidMount() {
     this.props.dispatch(getCatData());
-
   }
   render() {
-    console.log(this.props)
-    let info = this.props.categories;
     return (
-      <div>
-        <ul>
-          {info.map((data) => {
-            return <button onClick={(event) => { this.handleSubmit(event, data.id) }} className='categories' key={data.id}>
-              {data.name}
-            </button>
-          })}
-        </ul>
-      </div>
+      <PersistGate loading={null} persistor={persistor}>
+        <Router>
+          <Switch>
+            <Route exact path='/'>
+              <Start />
+            </Route>
+            <Route exact path='/form'>
+              <Form />
+            </Route>
+            <Route path='/quiz'>
+              <Quiz />
+            </Route>
+            <Route path='/results'>
+              <Results />
+            </Route>
+          </Switch>
+        </Router>
+      </PersistGate>
     )
   }
 }
-
-const mapStateToProps = (state, ownProps) => {
-  return { categories: state.catDropDown, justStore: state }
-};
-
-export default connect(mapStateToProps)(App);
+export default connect()(App);
