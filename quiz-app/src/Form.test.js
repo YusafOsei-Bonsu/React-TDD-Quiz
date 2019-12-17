@@ -1,4 +1,5 @@
 import React from 'react'
+import renderer from 'react-test-renderer';
 import {shallow} from 'enzyme'
 import Form from './components/form'
 
@@ -10,6 +11,13 @@ describe('Form component', () => {
 
     // Checks if the file exists
     test('File should exist', () => expect(require('./components/form')).toBeTruthy());
+
+    // Form component should render 
+    test('Form should render correctly', () => {
+        const component = renderer.create(<Form />);
+        const tree = component.toJSON();
+        expect(tree).toMatchSnapshot();
+    });
     
     // Checks if the drop-down box renders
     test('Dropdown box should render', () => expect(wrapper.find('select').length).toEqual(1));
