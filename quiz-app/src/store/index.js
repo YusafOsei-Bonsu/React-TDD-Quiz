@@ -7,7 +7,8 @@ const initialState = {
     catDropDown: [],
     quizData: []
 }
-// Initialise reducer
+// Initialize reducer. The reducer is the only way to communicate with state.
+// It takes an action creates new state object, then updates the new state object. 
 const reducer = (state = initialState, action) => {
     switch (action.type) {
         case 'catDropDown':
@@ -16,9 +17,9 @@ const reducer = (state = initialState, action) => {
         case 'questionsAnswers':
             // console.log( action.payload)
             return Object.assign({}, state, { quizData: action.payload })
-            default:
-                return state
-            }
+        default:
+            return state
+    }
 }
 // Create and export store
 export const store = createStore(reducer, applyMiddleware(thunk));

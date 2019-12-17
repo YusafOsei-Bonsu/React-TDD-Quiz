@@ -9,15 +9,14 @@ export const getCatData = (dispatch) => {
 
     }
 };
-// Fetch fo quiz by category id
-export const x = (dispatch, value) => {
+// Fetch for quiz by category id, level and 
+export const getQuizData = (value, dispatch) => {
     return (dispatch) => {
-        axios.get(`https://opentdb.com/api.php?amount=10&category=${value}`).then(response => {
-            const data = response.data;
+        axios.get(`https://opentdb.com/api.php?amount=10&category=${value}&difficulty=medium`).then(response => {
+            const data = response.data.results;
             console.log(data);
             dispatch({ type: 'questionsAnswers', payload: data });
         })
         // .catch(() => dispatch({type: 'handle-error' hasErrors: true }))
-
     }
 };
