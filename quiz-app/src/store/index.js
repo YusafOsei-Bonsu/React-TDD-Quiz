@@ -13,6 +13,9 @@ const reducer = (state = initialState, action) => {
         case 'catDropDown':
             // console.log( action.payload)
             return Object.assign({}, state, { catDropDown: action.payload })
+        case 'questionsAnswers':
+            // console.log( action.payload)
+            return Object.assign({}, state, { quizData: action.payload })
             default:
                 return state
             }
