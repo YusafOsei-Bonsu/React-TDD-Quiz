@@ -4,7 +4,7 @@ import '../styles/start.css';
 const Start = () => {
     return (
         <div className='start'>
-           <a href="/form"><button>Start</button></a> 
+           <a href="/form"><button className="glow-on-hover">Start Quiz</button></a> 
         </div>
     )
 }
