@@ -16,7 +16,7 @@ const Answers = (props) => {
             }}>
                 {answers.map(answer => {
                     return (<div className="Container" key={answer}>
-                        <label htmlFor={answer}>{answer}</label>
+                        <label htmlFor={answer}>{atob(answer)}</label>
                         <input type='radio' name='answer' value={answer} id={answer} key={answer} />
                     </div>)
                 })}

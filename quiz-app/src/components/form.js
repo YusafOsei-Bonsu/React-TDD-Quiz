@@ -34,13 +34,17 @@ const mapStateToProps = (state, ownProps) => {
 //add an on change to add user name to data
 const mapDispatchToProps = (dispatch) => {
     return {
-        handleSubmit: (event, history, data) => {
+        handleSubmit: async (event, history, data) => {
             event.preventDefault();
             let difficulty = event.target.difficulty.value;
             let topic = event.target.topic.value;
-            dispatch(getQuizData(topic, difficulty));
-            if (data !== undefined) {
+            await dispatch(getQuizData(topic, difficulty));
+            // console.log(data.length)
+            if (data.length > 1) {
                 history.push('/quiz/0');
+            }
+            else {
+                history.push(`/form/`)
             }
         },
         handleChange: (event) => {
