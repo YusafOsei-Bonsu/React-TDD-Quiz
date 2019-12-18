@@ -10,6 +10,7 @@ const persistConfig = {
 };
 // Initialise store
 const initialState = {
+    hasErrors: false,
     users: [],
     catDropDown: [],
     quizData: [],
@@ -19,6 +20,8 @@ const initialState = {
 // It takes an action creates new state object, then updates the new state object. 
 const reducer = (state = initialState, action) => {
     switch (action.type) {
+        case 'handle-error':
+            return Object.assign({}, state, {score: state.hasErrors = true})
         case 'catDropDown':
             // console.log( action.payload)
             return Object.assign({}, state, { catDropDown: action.payload })
