@@ -9,6 +9,7 @@ const Quiz = (props) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        
     }
     return (
         <div className='questionAndAnswer'>
