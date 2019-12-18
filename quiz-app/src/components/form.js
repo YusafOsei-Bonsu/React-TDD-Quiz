@@ -16,7 +16,7 @@ const Form = (props) => {
 
     return (
         <div className='form'>
-            <form onSubmit={(event) => {props.handleSubmit(event); history.push('/quiz')}}>
+            <form onSubmit={(event) => {props.handleSubmit(event); history.push('/quiz/0')}}>
                 <select name="topic">
                     {info.map((data) => { return <option key={data.id} value={data.id}>{data.name}</option> })}
                 </select><br />
