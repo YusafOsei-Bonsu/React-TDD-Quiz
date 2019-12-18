@@ -1,13 +1,18 @@
 .start {
+    position: absolute;
     display: flex;
-    justify-content: center;
-    align-content: center;
     background-color: #F1F0EA;
-    margin-top: 300px;
-    padding: 100px;
-    margin-left: 600px;
-    margin-right: 600px;
+    width: 50%;
+    margin: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 50%;
+    width: 50%;
     border-radius: 30px;
+    justify-content: center;
+    align-items: center;
 }
 
 .glow-on-hover {
