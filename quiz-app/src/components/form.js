@@ -3,7 +3,8 @@ import '../styles/form.css';
 import { connect } from 'react-redux';
 import { getQuizData } from './api/';
 import { useHistory } from 'react-router-dom';
-const Form = (props) => {
+
+export const Form = (props) => {
     let info = props.categories;
     let data = props.quizData
     let history = useHistory();
@@ -15,10 +16,10 @@ const Form = (props) => {
     // }
 
     return (
-        <div className='form'>
-            <form onSubmit={(event) => { props.handleSubmit(event, history, data) }}>
+        <div>
+            <form className='form' onSubmit={(event) => { props.handleSubmit(event, history, data) }}>
                 <select name="topic">
-                    {info.map((data) => { return <option key={data.id} value={data.id}>{data.name}</option> })}
+                    {info.map((data) => { return <option className={data.id} key={data.id} value={data.id}>{data.name}</option> })}
                 </select>
                 <br />
                 <label htmlFor="easy">Easy</label>

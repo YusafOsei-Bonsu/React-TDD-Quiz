@@ -6,39 +6,60 @@ import configureMockStore from 'redux-mock-store';
 import {connect} from 'react-redux';
 import mockAxios from 'axios';
 import thunk from 'redux-thunk';
-import promiseMiddleware from 'redux-promise-middleware';
-import { createPromise } from 'redux-promise-middleware';
+import { createPromise, promiseMiddleware } from 'redux-promise-middleware';
+import { isMainThread } from 'worker_threads';
+import {useHistory} from 'react-router-dom'
+    
+jest.mock('react-router-dom', () => ({
+        useHistory: () => ({
+          push: jest.fn(),
+        }),
+      }));
 
-const mockStore = configureMockStore([thunk, promiseMiddleware()]);
+function setup() {
+    const props = {
+    categories: [{bad:'good'}],
+    handleChange: jest.fn()
+    
+}
+
+const enzymeWrapper = shallow(<Form {...props} />)
+return {
+    props,
+    enzymeWrapper
+}
+}
 
 describe('Form Component', () => {
-    let store;
+    
+it('should render self and subcomponents', () => {
+    const {enzymeWrapper} = setup()
 
+    expect(enzymeWrapper.find('form').hasClass('form')).toBe(true)
+    console.log(enzymeWrapper.find('form'))
+})
+    it('DropDown box displays data', () => {
+        const props = {
+            info: [{bad:'good'}],
 
-  
-  // Focuses on the Form component for testing
-  beforeEach(() => store = mockStore({ quizData: {} }));
-  
-  // Checks if the file exists
-  test('File should exist', () => expect(require('../src/components/form')).toBeTruthy());
-  
-  // Form component should render 
-  test('Form should render correctly', () => {
-      const component = renderer.create(<Form />);
-      const tree = component.toJSON();
-      expect(tree).toMatchSnapshot();
-    });
+        }
+        const{enzymeWrapper} = setup()
+        expect(enzymeWrapper.find('option').hasClass()).toBe(true)
+    })
+    // // Checks if the drop-down box renders
+    // it('Dropdown box should render', () => {
+    //     const {enzymeWrapper} = setup()
+
+    //     expect(enzymeWrapper.find('select').length).toEqual(1);
+    // })
+    // it('should call onChange if input text is greater than 0', () => {
+    //     const {enzymeWrapper, props} = setup()
+    //     const input = enzymeWrapper.find('hohoho')
+    //     input.props().onSave('')
+    //     expect(props.handleChange.mock.calls.length).toBe(0)
+    // })
+
     
-    // Checks if the drop-down box renders
-    test('Dropdown box should render', () => expect(wrapper.find('select').length).toEqual(1));
-    
-    // Checks if the difficulty selectors render
-    test('Radiobuttons should render', () => expect(wrapper.find('.levelInputs').length).toEqual(1));
-    
-    // Checks if the textbox renders
-    test('Textbox should render', () => expect(wrapper.find('#textbox').length).toEqual(1));
-    
-    // Wipes the test suite
-    // afterAll(() => wrapper =null);
+
 });
 
