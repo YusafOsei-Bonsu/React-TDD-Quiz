@@ -2,19 +2,15 @@ import React from 'react';
 import Answers from '../components/answers';
 import Questions from '../components/questions';
 import { connect } from 'react-redux';
-import { useParams } from 'react-router-dom';
+import { useParams, useHistory } from 'react-router-dom';
 
 const Quiz = (props) => {
     let id = useParams();
-
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        
-    }
+    let intId = parseInt(id.id);
     return (
         <div className='questionAndAnswer'>
-            <Questions results={props.results[id.id]} handle={handleSubmit} />
-            <Answers results={props.results[id.id]} />
+            <Questions results={props.results[id.id]} />
+            <Answers results={props.results[id.id]} idParam={intId} />
         </div>
     );
 }
