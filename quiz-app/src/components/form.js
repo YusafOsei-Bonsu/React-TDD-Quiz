@@ -8,7 +8,7 @@ const Form = (props) => {
     let history = useHistory();
     return (
         <div className='form'>
-            <form onSubmit={(event) => {props.handleSubmit(event); history.push('/quiz/0')}}>
+            <form onSubmit={(event) => { props.handleSubmit(event, history) }}>
                 <select name="topic">
                     {info.map((data) => { return <option key={data.id} value={data.id}>{data.name}</option> })}
                 </select><br />
@@ -20,8 +20,8 @@ const Form = (props) => {
                 <br />
                 <label htmlFor="hard">Hard</label>
                 <input id="hard" type="radio" name="difficulty" value="hard" />
-                <br/>
-                <input onChange={props.handleChange} type='text' placeholder='player1' /><br/>
+                <br />
+                <input onChange={props.handleChange} type='text' placeholder='player1' /><br />
                 <input type="submit" value="Go" />
             </form>
         </div>
@@ -33,11 +33,12 @@ const mapStateToProps = (state, ownProps) => {
 //add an on change to add user name to data
 const mapDispatchToProps = (dispatch) => {
     return {
-        handleSubmit: (event) => {
+        handleSubmit: async (event, history) => {
             event.preventDefault();
             let difficulty = event.target.difficulty.value;
             let topic = event.target.topic.value;
-            dispatch(getQuizData(topic, difficulty));
+            await dispatch(getQuizData(topic, difficulty));
+            history.push('/quiz/0')
         },
         handleChange: (event) => {
             let name = event.target.value;
