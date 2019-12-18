@@ -1,5 +1,4 @@
 import React from 'react'
-
 const Questions = ({results}) => {
     return (
         <div className='answers'> 
@@ -7,5 +6,4 @@ const Questions = ({results}) => {
         </div>
         );
 }
-
 export default Questions;

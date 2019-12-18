@@ -12,7 +12,8 @@ const persistConfig = {
 const initialState = {
     users: [],
     catDropDown: [],
-    quizData: []
+    quizData: [],
+    score: 0
 }
 // Initialize reducer. The reducer is the only way to communicate with state.
 // It takes an action creates new state object, then updates the new state object. 
@@ -26,6 +27,10 @@ const reducer = (state = initialState, action) => {
             return Object.assign({}, state, { quizData: action.payload })
         case 'addUser':
             return Object.assign({}, state, { users: action.payload })
+        case 'increment':
+            return Object.assign({}, state, {score: state.score + 1})
+        case 'reset':
+            return Object.assign({}, state, {score: state.score = 0})
         default:
             return state
     }

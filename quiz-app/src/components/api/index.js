@@ -1,5 +1,4 @@
 import axios from 'axios';
-
 export const getCatData = (dispatch) => {
     return (dispatch) => {
         axios.get("https://opentdb.com/api_category.php").then(response => {
