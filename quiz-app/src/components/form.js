@@ -1,6 +1,6 @@
 import React from 'react';
 import '../styles/form.css';
-import { connect, Provider } from 'react-redux';
+import { connect } from 'react-redux';
 import { getQuizData } from './api/';
 import { useHistory } from 'react-router-dom';
 
