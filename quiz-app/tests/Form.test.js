@@ -1,27 +1,23 @@
-import React from 'react'
+import React from 'react';
 import renderer from 'react-test-renderer';
 import {shallow} from 'enzyme';
 import {Form} from '../src/components/form';
-import configureMockStore from 'redux-mock-store'
-import {connect} from 'react-redux'
+import configureMockStore from 'redux-mock-store';
+import {connect} from 'react-redux';
+import mockAxios from 'axios';
+import thunk from 'redux-thunk';
+import promiseMiddleware from 'redux-promise-middleware';
+import { createPromise } from 'redux-promise-middleware';
 
-const mockStore = configureMockStore(middlewares)
+const mockStore = configureMockStore([thunk, promiseMiddleware()]);
 
-describe.only('Form Component ', () => {
+describe('Form Component', () => {
+    let store;
 
-    test('Form should pass props to its children', () => {
-    const store = mockStore(initialState)
-    const wrapper = mount(
-      <Provider store={store}>
-        <Form />
-      </Provider>
-    )
-    expect(wrapper.type()).to.equal('div')
-  })
 
   
   // Focuses on the Form component for testing
-//   beforeAll(() => wrapper = shallow(<Form />));
+  beforeEach(() => store = mockStore({ quizData: {} }));
   
   // Checks if the file exists
   test('File should exist', () => expect(require('../src/components/form')).toBeTruthy());
