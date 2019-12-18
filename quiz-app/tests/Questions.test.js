@@ -1,6 +1,6 @@
 import React from 'react'
 import {shallow} from 'enzyme'
-import Questions from './components/questions'
+import Questions from '../src/components/questions'
 
 describe('Questions', () => {
     let wrapper;
@@ -8,7 +8,7 @@ describe('Questions', () => {
     beforeAll(() => wrapper = shallow(<Questions />));
     
     // checking if file exists
-    test('File should exist', () => expect(require('./components/questions')).toBeTruthy());
+    test('File should exist', () => expect(require('../src/components/questions')).toBeTruthy());
     
     afterAll(() => wrapper =null);
 });
