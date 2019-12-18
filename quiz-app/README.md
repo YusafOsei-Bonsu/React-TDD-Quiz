@@ -52,3 +52,44 @@ Initialised repo.
 6). As a user
 	I would like the option to play multiple times
 	So that I can enjoy myself while I improve my knowledge
+
+## Monday Retro 
+
+Team 1 Harry Yusaf
+
+Made all the containers and components using mock data:
+	Home
+	Start	
+	Quiz	
+		Questions and Answers
+
+Team 2 Brian and Jade
+	Made a store which is available to all elements.
+	Prepare fetch functionality.
+	Saved Fetched data to store.
+
+## Tues Stand-Up
+
+Jade -> plan to join the dots (merge files from both teams).
+Yusaf -> plan to do some testing and styling 
+Harry -> pair discussion, plan logic and counting answers
+Brian -> make store persistent.
+
+Overall Plan for Tuesday: 
+	Fix file structure
+	Merge to dev
+	Change Groups
+
+## Tues Retro
+
+Yusaf and Jade
+
+	Wrote test that were working until merged with dev.
+	Styled the start page.
+	Researched form test.
+
+Brian and Harry
+	Wrote the functionality for:
+		Start button,
+		Form, Saving form data to store, Added route to Qz on form submit,
+		Displaying quiz questions
