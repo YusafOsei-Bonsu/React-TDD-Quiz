@@ -11,7 +11,7 @@ const persistConfig = {
 // Initialise store
 const initialState = {
     hasErrors: false,
-    users: [],
+    users: 'User',
     catDropDown: [],
     quizData: [],
     score: 0
