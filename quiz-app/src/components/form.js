@@ -7,12 +7,20 @@ const Form = (props) => {
     let info = props.categories;
     let data = props.quizData
     let history = useHistory();
+
+    // let difficultyLevels = {
+    //     medium: 'medium',
+    //     easy: 'easy',
+    //     hard: 'hard' 
+    // }
+
     return (
         <div className='form'>
             <form onSubmit={(event) => { props.handleSubmit(event, history, data) }}>
                 <select name="topic">
                     {info.map((data) => { return <option key={data.id} value={data.id}>{data.name}</option> })}
-                </select><br />
+                </select>
+                <br />
                 <label htmlFor="easy">Easy</label>
                 <input id="easy" type="radio" name="difficulty" value="easy" />
                 <br />
