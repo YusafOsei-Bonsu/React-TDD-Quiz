@@ -1,7 +1,6 @@
-import React from 'react'
-import {shallow, mount} from 'enzyme'
-import {Questions} from '../src/components/questions'
-import { isMainThread } from 'worker_threads'
+import React from 'react';
+import {shallow, mount} from 'enzyme';
+import {Questions} from '../src/components/questions';
 
 function setup() {
     const props = {
@@ -26,8 +25,8 @@ function setup() {
 describe('Questions component', () => {
     //checking if file exists
     // checking if the answers render
-    const {enzymeWrapper} = setup()
-    test('should render questions', () => expect(enzymeWrapper.find('div').length).toEqual(1));
+    const {enzymeWrapperM} = setup()
+    test('should render questions', () => expect(enzymeWrapperM.find('div').length).toEqual(1));
     
     it('shows questions from data', () => {
         const wrapper = shallow(<h5>Nw==</h5>)

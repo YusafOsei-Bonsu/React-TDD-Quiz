@@ -37,19 +37,19 @@ const mapStateToProps = (state, ownProps) => {
 //add an on change to add user name to data
 export const mapDispatchToProps = (dispatch) => {
     return {
-        handleSubmit: async (event, history, data) => {
+        handleSubmit: (event, history, data) => {
             event.preventDefault();
             let difficulty = event.target.difficulty.value;
             let topic = event.target.topic.value;
-            await dispatch(getQuizData(topic, difficulty));
+            dispatch(getQuizData(topic, difficulty));
             // console.log(data.length)
-            if (await data.length === 0) {
-                alert ('Server Error. Please try again')
-                await history.push(`/form/`)
-               
+            if (data.length === 0) {
+                alert('Server Error. Please try again')
+                history.push(`/form/`)
+
             }
             else {
-                await  history.push('/quiz/0');
+                history.push('/quiz/0');
             }
         },
         handleChange: (event) => {
