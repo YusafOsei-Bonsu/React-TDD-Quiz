@@ -9,10 +9,12 @@ import { useParams} from 'react-router-dom';
     let intId = parseInt(id.id);
     console.log(props)
     return (
-        <div className='questionAndAnswer'>
+        props.results.length > 0 ?
+            <div className='questionAndAnswer'>
             <Questions results={props.results[id.id]} />
             <Answers results={props.results[id.id]} idParam={intId} />
-        </div>
+        </div>   
+        : <p>Loading...</p>
     );
 }
 export const mapStateToProps = (state) => {

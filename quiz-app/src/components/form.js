@@ -43,11 +43,13 @@ export const mapDispatchToProps = (dispatch) => {
             let topic = event.target.topic.value;
             await dispatch(getQuizData(topic, difficulty));
             // console.log(data.length)
-            if (data.length > 1) {
-                history.push('/quiz/0');
+            if (await data.length === 0) {
+                alert ('Server Error. Please try again')
+                await history.push(`/form/`)
+               
             }
             else {
-                history.push(`/form/`)
+                await  history.push('/quiz/0');
             }
         },
         handleChange: (event) => {
