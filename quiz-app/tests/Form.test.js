@@ -68,6 +68,10 @@ describe('Form Component', () => {
         form.simulate('submit');
         expect(props.handleSubmit).toHaveBeenCalledTimes(1);
     });
+    it(`MyComponent renders with default props`, () => {
+        const { enzymeWrapper} = setup()
+        expect(enzymeWrapper).toMatchSnapshot();
+      });
 
     // // Checks if the drop-down box renders
     // it('Dropdown box should render', () => {
