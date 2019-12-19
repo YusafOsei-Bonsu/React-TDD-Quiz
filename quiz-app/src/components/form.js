@@ -8,13 +8,7 @@ export const Form = (props) => {
     let info = props.categories;
     let data = props.quizData
     let history = useHistory();
-
-    // let difficultyLevels = {
-    //     medium: 'medium',
-    //     easy: 'easy',
-    //     hard: 'hard' 
-    // }
-
+    // console.log(props)
     return (
         <div>
             <form className='form' onSubmit={(event) => { props.handleSubmit(event, history, data) }}>
@@ -31,7 +25,7 @@ export const Form = (props) => {
                 <label htmlFor="hard">Hard</label>
                 <input id="hard" type="radio" name="difficulty" value="hard" />
                 <br />
-                <input onChange={props.handleChange} type='text' placeholder='player1' /><br />
+                <input id="textInput" onChange={props.handleChange} type='text' placeholder='player1' /><br />
                 <input type="submit" value="Go" />
             </form>
         </div>
@@ -41,7 +35,7 @@ const mapStateToProps = (state, ownProps) => {
     return { categories: state.catDropDown, justStore: ownProps, userName: state.users, quizData: state.quizData }
 };
 //add an on change to add user name to data
-const mapDispatchToProps = (dispatch) => {
+export const mapDispatchToProps = (dispatch) => {
     return {
         handleSubmit: async (event, history, data) => {
             event.preventDefault();

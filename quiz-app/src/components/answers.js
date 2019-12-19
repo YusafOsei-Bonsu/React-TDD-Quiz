@@ -3,6 +3,7 @@ import { useHistory } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 const Answers = (props) => {
+    console.log(props)
     let correctAnswer = props.results.correct_answer;
     let answer = [props.results.correct_answer];
     let answers = answer.concat(props.results.incorrect_answers);
