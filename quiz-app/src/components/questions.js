@@ -1,6 +1,5 @@
 import React from 'react'
-export const Questions = ({results}) => {
-  // console.log(results.question)
+const Questions = ({results}) => {
     return (
         <div className='answers'> 
           <h5>{atob(results.question)}</h5>
