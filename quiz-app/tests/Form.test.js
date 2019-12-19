@@ -1,7 +1,7 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 import { shallow, mount } from 'enzyme';
-import { Form } from '../src/components/form';
+import { Form , mapStateToProps} from '../src/components/form';
 import configureMockStore from 'redux-mock-store';
 import { connect } from 'react-redux';
 import mockAxios from 'axios';
@@ -29,7 +29,8 @@ function setup() {
     }
 
     const enzymeWrapper = shallow(<Form {...props} />)
-    const enzymeWrapperM = mount(<Form {...props} />)
+    const enzymeWrapperM = mount(<Form value='target' {...props} />)
+
     return {
         props,
         enzymeWrapper,
@@ -45,29 +46,35 @@ describe('Form Component', () => {
         expect(enzymeWrapper.find('form').hasClass('form')).toBe(true)
 
     })
-    it('should call handleChange ', () => {
-
-        const { props } = setup();
-        const spy = jest.spyOn(props, 'handleChange');
-        props.handleChange();
-        expect(spy).toHaveBeenCalled();
-        spy.mockRestore();
-    })
-    // it('DropDown box displays data', () => {
-    //     const props = {
-    //         info: [{ bad: 'good' }],
-
-    //     }
-    //     const { enzymeWrapper } = setup()
-    //     expect(enzymeWrapper.find('option').hasClass()).toBe(true)
-    // })
-
     it('calls handleSubmit prop function when form is submitted', () => {
         const { enzymeWrapperM, props } = setup()
         const form = enzymeWrapperM.find('form');
         form.simulate('submit');
         expect(props.handleSubmit).toHaveBeenCalledTimes(1);
     });
+    it('calls handleChange', () => {
+        const { enzymeWrapperM, props } = setup()
+        const input = enzymeWrapperM.find('#textInput')
+        input.simulate('change', {target: {value: 'church'}})
+        input.simulate('keydown', {key: 'ArrowDown'})
+        input.simulate('keydown', {key: 'Enter'})
+        expect(props.handleChange).toHaveBeenCalledTimes(1)
+    })
+    it('should call onChange', () => {
+        // const handleChange = jest.fn()
+        const event = {
+            preventDefault() {},
+            target: {value: 'the-value'}
+        };
+
+        const { enzymeWrapper, props} = setup()
+        const component = enzymeWrapper
+        component.find('#textInput').simulate('change', event);
+        expect(props.handleChange).toBeCalledWith(event);
+
+    });
+
+    it
 
     // // Checks if the drop-down box renders
     // it('Dropdown box should render', () => {

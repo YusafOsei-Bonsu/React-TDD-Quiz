@@ -2,8 +2,7 @@ import React from 'react';
 import { useHistory } from 'react-router-dom';
 import { connect } from 'react-redux';
 
-const Answers = (props) => {
-    console.log(props)
+export const Answers = (props) => {
     let correctAnswer = props.results.correct_answer;
     let answer = [props.results.correct_answer];
     let answers = answer.concat(props.results.incorrect_answers);
@@ -27,10 +26,10 @@ const Answers = (props) => {
         </div>
     );
 }
-const mapStateToProps = (state) => {
+export const mapStateToProps = (state) => {
     return { len: state.quizData, data: state.score, user:state.users }
 }
-const mapDispatchToProps = (dispatch) => {
+export const mapDispatchToProps = (dispatch) => {
     return {
         handleSubmit: (event, iD, history, correctAnswer, props) => {
             event.preventDefault();

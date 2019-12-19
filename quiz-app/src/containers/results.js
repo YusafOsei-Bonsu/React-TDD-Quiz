@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { useHistory } from 'react-router-dom';
-const Results = (props) => {
+export const Results = (props) => {
     let history = useHistory();
     return (
         <div className='results'>
@@ -11,14 +11,14 @@ const Results = (props) => {
         </div>
     );
 }
-const mapDispatchToProps = (dispatch) => {
+export const mapDispatchToProps = (dispatch) => {
     return {
         handleClick: () => {
             dispatch({ type: 'reset' });   
         }
     }
 }
-const mapStateToProps = (state, ownProps) => {
+export const mapStateToProps = (state, ownProps) => {
     return {  len:state.quizData.length ,data: state.score, user:state.users  }
 };
 export default connect(mapStateToProps, mapDispatchToProps)(Results);

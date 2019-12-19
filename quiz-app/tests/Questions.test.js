@@ -1,14 +1,36 @@
 import React from 'react'
-import {shallow} from 'enzyme'
-import Questions from '../src/components/questions'
+import {shallow, mount} from 'enzyme'
+import {Questions} from '../src/components/questions'
+import { isMainThread } from 'worker_threads'
 
-describe('Questions', () => {
-    let wrapper;
+function setup() {
+    const props = {
+        results: 
+            {category: 'GljaCBpcyBhIGx1c3Qgb2Yg/', 
+            question: 'Nw==',
+            id: '0',
+            correct_answer: "Nw==",
+            incorrect_answers:
+            ["QA==","OQ==", "MTA="]},
+        
+    }
+
+    const enzymeWrapper = shallow(<Questions {...props} />)
+    const enzymeWrapperM = mount(<Questions {...props} />)
+    return {
+        props,
+        enzymeWrapper,
+        enzymeWrapperM
+    }
+}
+describe('Questions component', () => {
+    //checking if file exists
+    // checking if the answers render
+    const {enzymeWrapper} = setup()
+    test('should render questions', () => expect(enzymeWrapper.find('div').length).toEqual(1));
     
-    beforeAll(() => wrapper = shallow(<Questions />));
-    
-    // checking if file exists
-    test('File should exist', () => expect(require('../src/components/questions')).toBeTruthy());
-    
-    afterAll(() => wrapper =null);
+    it('shows questions from data', () => {
+        const wrapper = shallow(<h5>Nw==</h5>)
+        expect(wrapper.text()).toEqual('Nw==')
+    })
 });
