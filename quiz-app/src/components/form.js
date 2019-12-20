@@ -17,8 +17,7 @@ export const Form = (props) => {
                     {info.map((data) => { return <option className={data.id} key={data.id} value={data.id}>{data.name}</option> })}
                 </select>
                 <br />
-                <label htmlFor="easy">Easy</label>
-                <input id="easy" type="radio" key="easy" name="difficulty" value="easy" />
+                <label htmlFor="easy"><input id="easy" type="radio" key="easy" name="difficulty" value="easy" />Easy</label>
                 <br />
                 <label htmlFor="medium"><input id="medium" type="radio" name="difficulty" value="medium" />Medium</label>
                 <br />
