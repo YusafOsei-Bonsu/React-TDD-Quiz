@@ -9,6 +9,8 @@
     margin-left: auto;
     margin-right: auto;
     margin-top: 100px;
+    justify-content: center;
+    align-items: center;
 }
 
 h1, h5 {
@@ -37,9 +39,12 @@ h5 {
     border-radius: 10px;
     padding-top: 5px;
     padding-bottom: 5px;
+    padding-left: 90px;
+    padding-right: 90px;
     margin-top: 20px;
-    margin-left: 140px;
-    width: 500px;
+    margin-left: 20px;
+    margin-right: auto;
+    width: fit-content;
 }
 
 #submitBtn:hover {
