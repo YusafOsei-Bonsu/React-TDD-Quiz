@@ -32,7 +32,7 @@ export const Form = (props) => {
         </div>
     )
 }
-const mapStateToProps = (state, ownProps) => {
+export const mapStateToProps = (state, ownProps) => {
     return { categories: state.catDropDown, justStore: ownProps, userName: state.users, quizData: state.quizData }
 };
 //add an on change to add user name to data

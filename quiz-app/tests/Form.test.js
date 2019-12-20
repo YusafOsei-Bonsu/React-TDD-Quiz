@@ -1,21 +1,13 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 import { shallow, mount } from 'enzyme';
-import { Form , mapStateToProps} from '../src/components/form';
-import configureMockStore from 'redux-mock-store';
-import { connect } from 'react-redux';
-import mockAxios from 'axios';
-import thunk from 'redux-thunk';
-import { createPromise, promiseMiddleware } from 'redux-promise-middleware';
-import { isMainThread } from 'worker_threads';
-import { useHistory } from 'react-router-dom'
+import { Form, mapStateToProps, mapDispatchToProps } from '../src/components/form';
 
 jest.mock('react-router-dom', () => ({
     useHistory: () => ({
         push: jest.fn(),
     }),
 }));
-
 function setup() {
     const props = {
         categories: [
@@ -24,7 +16,9 @@ function setup() {
             { "id": 10, "name": "Entertainment: Books" }
         ],
         handleChange: jest.fn(),
-        handleSubmit: jest.fn()
+        handleSubmit: jest.fn(),
+        mapStateToProps: jest.fn(),
+        mapDispatchToProps: jest.fn()
 
     }
 
@@ -37,14 +31,10 @@ function setup() {
         enzymeWrapperM
     }
 }
-
 describe('Form Component', () => {
-
     it('should render self and subcomponents', () => {
         const { enzymeWrapper } = setup()
-
         expect(enzymeWrapper.find('form').hasClass('form')).toBe(true)
-
     })
     it('calls handleSubmit prop function when form is submitted', () => {
         const { enzymeWrapperM, props } = setup()
@@ -55,41 +45,27 @@ describe('Form Component', () => {
     it('calls handleChange', () => {
         const { enzymeWrapperM, props } = setup()
         const input = enzymeWrapperM.find('#textInput')
-        input.simulate('change', {target: {value: 'church'}})
-        input.simulate('keydown', {key: 'ArrowDown'})
-        input.simulate('keydown', {key: 'Enter'})
+        input.simulate('change', { target: { value: 'church' } })
+        input.simulate('keydown', { key: 'ArrowDown' })
+        input.simulate('keydown', { key: 'Enter' })
         expect(props.handleChange).toHaveBeenCalledTimes(1)
     })
     it('should call onChange', () => {
         // const handleChange = jest.fn()
         const event = {
-            preventDefault() {},
-            target: {value: 'the-value'}
+            preventDefault() { },
+            target: { value: 'the-value' }
         };
-
-        const { enzymeWrapper, props} = setup()
+        const { enzymeWrapper, props } = setup()
         const component = enzymeWrapper
         component.find('#textInput').simulate('change', event);
         expect(props.handleChange).toBeCalledWith(event);
 
     });
-
-    it
-
-    // // Checks if the drop-down box renders
-    // it('Dropdown box should render', () => {
-    //     const {enzymeWrapper} = setup()
-
-    //     expect(enzymeWrapper.find('select').length).toEqual(1);
-    // })
-    // it('should call onChange if input text is greater than 0', () => {
-    //     const {enzymeWrapper, props} = setup()
-    //     const input = enzymeWrapper.find('hohoho')
-    //     input.props().onSave('')
-    //     expect(props.handleChange.mock.calls.length).toBe(0)
-    // })
-
-
-
+    it('Maps state to props', () => {
+        let dispatch = jest.fn()
+        const { props } = setup()
+        expect(props.mapDispatchToProps(dispatch)).toMatchSnapshot()
+    })
 });
 

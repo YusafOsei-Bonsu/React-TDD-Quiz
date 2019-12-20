@@ -11,7 +11,6 @@ describe('Test API calling functions', ()=> {
         })
         it('getCatData should accept dispatch', () => {
             let dispatch = jest.fn()
-            
           expect(getCatData(dispatch)).toMatchSnapshot()
         })
     })
