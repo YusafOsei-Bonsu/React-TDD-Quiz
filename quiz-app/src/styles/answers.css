@@ -6,6 +6,9 @@
     background-color: #F1F0EA;
     width: 40%;
     padding: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 100px;
 }
 
 h1, h5 {
@@ -17,7 +20,12 @@ h5 {
     font-size: 20px;
 }
 
-button {
+.Container {
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+#submitBtn {
     cursor: pointer;
     font-size: 25px;
     position: relative;
@@ -29,17 +37,18 @@ button {
     border-radius: 10px;
     padding-top: 5px;
     padding-bottom: 5px;
-    margin-left: 50%;
-    margin-right: 50%;
+    margin-top: 20px;
+    margin-left: 140px;
+    width: 500px;
 }
 
-button:hover {
+#submitBtn:hover {
     color: rgb(0, 0, 0);
     background-color: rgb(255, 255, 255);
     border: 2px solid rgb(0, 0, 0);
 }
 
-button:active {
+#submitBtn:active {
     color: rgb(255, 255, 255);
     background-color: rgb(169, 169, 169);
     border: 2px solid rgb(255, 255, 255);
