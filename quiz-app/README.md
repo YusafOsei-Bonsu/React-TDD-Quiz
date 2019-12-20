@@ -125,5 +125,3 @@ Start page
 	Quiz page
 	![GitHub Logo](./public/result_img.png)
 	Results page
-
-
