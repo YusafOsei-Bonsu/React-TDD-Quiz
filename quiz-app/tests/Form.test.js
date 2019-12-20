@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
-import { Form, mapStateToProps } from '../src/components/form';
+import { Form, mapStateToProps, mapDispatchToProps } from '../src/components/form';
 
 jest.mock('react-router-dom', () => ({
     useHistory: () => ({
@@ -15,7 +15,10 @@ function setup() {
             { "id": 10, "name": "Entertainment: Books" }
         ],
         handleChange: jest.fn(),
-        handleSubmit: jest.fn()
+        handleSubmit: jest.fn(),
+        mapStateToProps: jest.fn(),
+        mapDispatchToProps: jest.fn()
+
     }
     const enzymeWrapper = shallow(<Form {...props} />)
     const enzymeWrapperM = mount(<Form value='target' {...props} />)
@@ -55,5 +58,10 @@ describe('Form Component', () => {
         component.find('#textInput').simulate('change', event);
         expect(props.handleChange).toBeCalledWith(event);
     });
+    it('Maps state to props', () => {
+        let dispatch = jest.fn()
+        const { props } = setup()
+        expect(props.mapDispatchToProps(dispatch)).toMatchSnapshot()
+    })
 });
 

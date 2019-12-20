@@ -17,7 +17,7 @@ export const mapDispatchToProps = (dispatch) => {
     return {
         handleClick: () => {
             dispatch({ type: 'reset' });
-            dispatch({ type: 'addUser', payload: "User" })
+            dispatch({ type: 'addUser', payload: "User" })   
         }
     }
 }

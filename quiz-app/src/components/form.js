@@ -17,7 +17,8 @@ export const Form = (props) => {
                     {info.map((data) => { return <option className={data.id} key={data.id} value={data.id}>{data.name}</option> })}
                 </select>
                 <br />
-                <label htmlFor="easy"><input id="easy" type="radio" name="difficulty" value="easy" />Easy</label>
+                <label htmlFor="easy">Easy</label>
+                <input id="easy" type="radio" key="easy" name="difficulty" value="easy" />
                 <br />
                 <label htmlFor="medium"><input id="medium" type="radio" name="difficulty" value="medium" />Medium</label>
                 <br />
@@ -29,7 +30,7 @@ export const Form = (props) => {
         </div>
     )
 }
-const mapStateToProps = (state, ownProps) => {
+export const mapStateToProps = (state, ownProps) => {
     return { categories: state.catDropDown, justStore: ownProps, userName: state.users, quizData: state.quizData }
 };
 //add an on change to add user name to data
@@ -39,6 +40,7 @@ export const mapDispatchToProps = (dispatch) => {
             event.preventDefault();
             let difficulty = event.target.difficulty.value;
             let topic = event.target.topic.value;
+            dispatch({type: 'reset'});
             dispatch(getQuizData(topic, difficulty));
             if (data.length === 0) {
                 alert('Server Error. Please try again')

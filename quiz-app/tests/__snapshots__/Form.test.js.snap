@@ -1,5 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Form Component Maps state to props 1`] = `undefined`;
+
 exports[`Form Component MyComponent renders with default props 1`] = `
 <div>
   <form

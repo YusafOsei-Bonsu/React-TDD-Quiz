@@ -33,7 +33,7 @@ export const reducer = (state = initialState, action) => {
         case 'increment':
             return Object.assign({}, state, {score: state.score + 1})
         case 'reset':
-            return Object.assign({}, state, {score: state.score = 0})
+            return Object.assign({}, state, {score: state.score = 0, quizData: []})
         default:
             return state
     }

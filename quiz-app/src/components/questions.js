@@ -1,6 +1,4 @@
-import React from 'react';
-import '../styles/answers.css';
-
+import React from 'react'
 export const Questions = ({results}) => {
     return (
         <div className='answers'> 
