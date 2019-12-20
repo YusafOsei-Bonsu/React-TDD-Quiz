@@ -42,6 +42,7 @@ export const mapDispatchToProps = (dispatch) => {
             event.preventDefault();
             let difficulty = event.target.difficulty.value;
             let topic = event.target.topic.value;
+            dispatch({type: 'reset'});
             dispatch(getQuizData(topic, difficulty));
             if (data.length === 0) {
                 alert('Server Error. Please try again')
