@@ -9,6 +9,8 @@
     margin-left: auto;
     margin-right: auto;
     margin-top: 100px;
+    justify-content: center;
+    align-items: center;
 }
 
 h1, h5 {
@@ -40,7 +42,7 @@ h5 {
     padding-left: 90px;
     padding-right: 90px;
     margin-top: 20px;
-    margin-left: auto;
+    margin-left: 20px;
     margin-right: auto;
     width: fit-content;
 }
