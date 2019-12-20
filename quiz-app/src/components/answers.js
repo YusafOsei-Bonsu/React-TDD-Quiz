@@ -1,6 +1,7 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
 import { connect } from 'react-redux';
+import '../styles/answers.css';
 
 export const Answers = (props) => {
     let correctAnswer = props.results.correct_answer;
