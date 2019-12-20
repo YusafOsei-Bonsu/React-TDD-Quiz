@@ -9,7 +9,7 @@ export const Results = (props) => {
         <div className='results'>
            <h1>Results</h1> 
            <h3>{props.user}, you scored {props.data} out of {props.len}</h3>
-           <button onClick={()=>{props.handleClick(history);history.push('/');}}>Restart Quiz</button>
+           <button className="glow-on-hover" onClick={()=>{props.handleClick(history);history.push('/');}}>Restart Quiz</button>
         </div>
     );
 }
