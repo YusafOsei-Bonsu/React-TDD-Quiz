@@ -6,9 +6,12 @@ import { useHistory } from 'react-router-dom';
 
 export const Form = (props) => {
     let info = props.categories;
+    console.log(info)
+    // remove link that never loads
+    info.splice(20, 1)
+    console.log(info)
     let data = props.quizData
     let history = useHistory();
-    // console.log(props)
     return (
         <div>
             <form className='form' onSubmit={(event) => { props.handleSubmit(event, history, data) }}>
@@ -42,11 +45,9 @@ export const mapDispatchToProps = (dispatch) => {
             let difficulty = event.target.difficulty.value;
             let topic = event.target.topic.value;
             dispatch(getQuizData(topic, difficulty));
-            // console.log(data.length)
             if (data.length === 0) {
                 alert('Server Error. Please try again')
                 history.push(`/form/`)
-
             }
             else {
                 history.push('/quiz/0');
@@ -54,7 +55,7 @@ export const mapDispatchToProps = (dispatch) => {
         },
         handleChange: (event) => {
             let name = event.target.value;
-            dispatch({ type: 'addUser', payload: name })
+            dispatch({ type: 'addUser', payload: name });
         }
     }
 }
