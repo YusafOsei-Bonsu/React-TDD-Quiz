@@ -14,7 +14,8 @@ export const Results = (props) => {
 export const mapDispatchToProps = (dispatch) => {
     return {
         handleClick: () => {
-            dispatch({ type: 'reset' });   
+            dispatch({ type: 'reset' });
+            dispatch({ type: 'addUser', payload: "User" })   
         }
     }
 }

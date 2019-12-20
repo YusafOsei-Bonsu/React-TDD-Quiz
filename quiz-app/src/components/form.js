@@ -6,9 +6,12 @@ import { useHistory } from 'react-router-dom';
 
 export const Form = (props) => {
     let info = props.categories;
+    console.log(info)
+    // remove link that never loads
+    info.splice(20, 1)
+    console.log(info)
     let data = props.quizData
     let history = useHistory();
-    // console.log(props)
     return (
         <div>
             <form className='form' onSubmit={(event) => { props.handleSubmit(event, history, data) }}>
@@ -37,24 +40,22 @@ const mapStateToProps = (state, ownProps) => {
 //add an on change to add user name to data
 export const mapDispatchToProps = (dispatch) => {
     return {
-        handleSubmit: async (event, history, data) => {
+        handleSubmit: (event, history, data) => {
             event.preventDefault();
             let difficulty = event.target.difficulty.value;
             let topic = event.target.topic.value;
-            await dispatch(getQuizData(topic, difficulty));
-            // console.log(data.length)
-            if (await data.length === 0) {
-                alert ('Server Error. Please try again')
-                await history.push(`/form/`)
-               
+            dispatch(getQuizData(topic, difficulty));
+            if (data.length === 0) {
+                alert('Server Error. Please try again')
+                history.push(`/form/`)
             }
             else {
-                await  history.push('/quiz/0');
+                history.push('/quiz/0');
             }
         },
         handleChange: (event) => {
             let name = event.target.value;
-            dispatch({ type: 'addUser', payload: name })
+            dispatch({ type: 'addUser', payload: name });
         }
     }
 }

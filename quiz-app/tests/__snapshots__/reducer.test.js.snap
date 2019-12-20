@@ -1,0 +1,151 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Reducer should handle TODO_REQUEST 1`] = `
+Object {
+  "catDropDown": Array [],
+  "hasErrors": false,
+  "quizData": Array [],
+  "score": 0,
+  "users": Array [],
+}
+`;
+
+exports[`Reducer should handle addUser 1`] = `
+Object {
+  "catDropDown": Array [],
+  "hasErrors": false,
+  "quizData": Array [],
+  "score": 0,
+  "users": undefined,
+}
+`;
+
+exports[`Reducer should handle addUser 2`] = `
+Object {
+  "catDropDown": Array [],
+  "hasErrors": false,
+  "quizData": Array [],
+  "score": 0,
+  "users": undefined,
+}
+`;
+
+exports[`Reducer should handle adding 1`] = `
+Object {
+  "catDropDown": Array [],
+  "hasErrors": false,
+  "quizData": Array [],
+  "score": 0,
+  "users": undefined,
+}
+`;
+
+exports[`Reducer should handle addingCatData 1`] = `
+Object {
+  "catDropDown": undefined,
+  "hasErrors": false,
+  "quizData": Array [],
+  "score": 0,
+  "users": Array [],
+}
+`;
+
+exports[`Reducer should handle addingData 1`] = `
+Object {
+  "catDropDown": undefined,
+  "hasErrors": false,
+  "quizData": Array [],
+  "score": 0,
+  "users": Array [],
+}
+`;
+
+exports[`Reducer should handle addingData 2`] = `
+Object {
+  "catDropDown": undefined,
+  "hasErrors": false,
+  "quizData": Array [],
+  "score": 0,
+  "users": Array [],
+}
+`;
+
+exports[`Reducer should handle addingQuizData 1`] = `
+Object {
+  "catDropDown": Array [],
+  "hasErrors": false,
+  "quizData": Array [],
+  "score": 0,
+  "users": Array [],
+}
+`;
+
+exports[`Reducer should handle category 1`] = `
+Object {
+  "catDropDown": Array [],
+  "hasErrors": true,
+  "quizData": Array [],
+  "score": true,
+  "users": Array [],
+}
+`;
+
+exports[`Reducer should handle category data deli 1`] = `
+Object {
+  "catDropDown": Array [],
+  "hasErrors": true,
+  "quizData": Array [],
+  "score": true,
+  "users": Array [],
+}
+`;
+
+exports[`Reducer should handle category data delivery 1`] = `
+Object {
+  "catDropDown": Array [],
+  "hasErrors": true,
+  "quizData": Array [],
+  "score": true,
+  "users": Array [],
+}
+`;
+
+exports[`Reducer should handle error 1`] = `
+Object {
+  "catDropDown": Array [],
+  "hasErrors": false,
+  "quizData": Array [],
+  "score": 0,
+  "users": undefined,
+}
+`;
+
+exports[`Reducer should return the initial state 1`] = `
+Object {
+  "catDropDown": Array [],
+  "hasErrors": false,
+  "quizData": Array [],
+  "score": 0,
+  "users": Array [],
+}
+`;
+
+exports[`todos reducer should handle TODO_REQUEST 1`] = `
+Object {
+  "catDropDown": Array [],
+  "hasErrors": false,
+  "quizData": Array [],
+  "score": 0,
+  "users": Array [],
+}
+`;
+
+exports[`todos reducer should return the initial state 1`] = `
+Object {
+  "catDropDown": Array [],
+  "hasErrors": false,
+  "quizData": Array [],
+  "score": 0,
+  "users": Array [],
+}
+`;

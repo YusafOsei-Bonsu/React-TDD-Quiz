@@ -7,7 +7,6 @@ import { useParams} from 'react-router-dom';
  export const Quiz = (props) => {
     let id = useParams();
     let intId = parseInt(id.id);
-    console.log(props)
     return (
         props.results.length > 0 ?
             <div className='questionAndAnswer'>
