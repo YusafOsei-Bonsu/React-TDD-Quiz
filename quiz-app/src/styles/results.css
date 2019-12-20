@@ -1,0 +1,12 @@
+.results {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    background-color: #F1F0EA;
+    padding: 10px;
+    align-items: center;
+}
+
+h1 {
+    text-decoration: underline;
+}

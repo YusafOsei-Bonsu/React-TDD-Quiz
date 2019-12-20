@@ -1,6 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { useHistory } from 'react-router-dom';
+import '../styles/results.css';
+
 export const Results = (props) => {
     let history = useHistory();
     return (
