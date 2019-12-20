@@ -6,10 +6,8 @@ import { useHistory } from 'react-router-dom';
 
 export const Form = (props) => {
     let info = props.categories;
-    console.log(info)
     // remove link that never loads
     info.splice(20, 1)
-    console.log(info)
     let data = props.quizData
     let history = useHistory();
     return (
@@ -20,7 +18,7 @@ export const Form = (props) => {
                 </select>
                 <br />
                 <label htmlFor="easy">Easy</label>
-                <input id="easy" type="radio" name="difficulty" value="easy" />
+                <input id="easy" type="radio" key="easy" name="difficulty" value="easy" />
                 <br />
                 <label htmlFor="medium">Medium</label>
                 <input id="medium" type="radio" name="difficulty" value="medium" />
