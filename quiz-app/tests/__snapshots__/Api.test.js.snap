@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tes Reducer should return the initial state 1`] = `[Function]`;
+
+exports[`Tes Reducer should return the initial state 2`] = `[Function]`;
+
+exports[`Test API calling  Reducer should return the initial state 1`] = `[Function]`;
+
+exports[`Test API calling  Reducer should return the initial state 2`] = `[Function]`;
+
+exports[`Test API calling functions S should return the initial state 1`] = `[Function]`;
+
+exports[`Test API calling functions S should return the initial state 2`] = `[Function]`;
+
+exports[`Test API calling functions Should be called getCatData should accept dispatch 1`] = `[Function]`;
+
+exports[`Test API calling functions Should be called getCatData should return the initial state 1`] = `[Function]`;
+
+exports[`Test API calling functions Should be called getQuiz 1`] = `[Function]`;
+
+exports[`Test API calling functions Should be called getQuizData  1`] = `[Function]`;
+
+exports[`Test API calling functions Should be called getQuizData should accept ar 1`] = `[Function]`;
+
+exports[`Test API calling functions Should be called getQuizData should accept arguments 1`] = `[Function]`;
+
+exports[`Test API calling functions Should be called should return the initial state 1`] = `[Function]`;
+
+exports[`Test api Reducer should return the initial state 1`] = `[Function]`;
+
+exports[`Test api Reducer should return the initial state 2`] = `[Function]`;
+
+exports[`register Reducer should return the initial state 1`] = `[Function]`;
+
+exports[`register Reducer should return the initial state 2`] = `[Function]`;

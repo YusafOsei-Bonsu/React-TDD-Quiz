@@ -1,6 +1,7 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
 import { connect } from 'react-redux';
+import '../styles/answers.css';
 
 export const Answers = (props) => {
     let correctAnswer = props.results.correct_answer;
@@ -15,12 +16,14 @@ export const Answers = (props) => {
                 props.handleSubmit(event, iD, history, correctAnswer, props)
             }}>
                 {answers.map(answer => {
-                    return (<div className="Container" key={answer}>
-                        <label htmlFor={answer}>{atob(answer)}</label>
-                        <input type='radio' name='answer' value={answer} id={answer} key={answer} />
-                    </div>)
+                    return (
+                        <div className="Container" key={answer}>
+                            <label htmlFor={answer}>{atob(answer)}</label>
+                            <input type='radio' name='answer' value={answer} id={answer} key={answer} />
+                        </div>
+                    )
                 })}
-                <button>Submit</button>
+                <button id="submitBtn">Submit</button>
                 <h1>{props.user} your score is: {props.data}</h1>
             </form>
         </div>

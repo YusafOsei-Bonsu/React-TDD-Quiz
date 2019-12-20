@@ -6,9 +6,12 @@ import { useHistory } from 'react-router-dom';
 
 export const Form = (props) => {
     let info = props.categories;
+    console.log(info)
+    // remove link that never loads
+    info.splice(20, 1)
+    console.log(info)
     let data = props.quizData
     let history = useHistory();
-    // console.log(props)
     return (
         <div>
             <form className='form' onSubmit={(event) => { props.handleSubmit(event, history, data) }}>
@@ -16,14 +19,11 @@ export const Form = (props) => {
                     {info.map((data) => { return <option className={data.id} key={data.id} value={data.id}>{data.name}</option> })}
                 </select>
                 <br />
-                <label htmlFor="easy">Easy</label>
-                <input id="easy" type="radio" name="difficulty" value="easy" />
+                <label htmlFor="easy"><input id="easy" type="radio" name="difficulty" value="easy" />Easy</label>
                 <br />
-                <label htmlFor="medium">Medium</label>
-                <input id="medium" type="radio" name="difficulty" value="medium" />
+                <label htmlFor="medium"><input id="medium" type="radio" name="difficulty" value="medium" />Medium</label>
                 <br />
-                <label htmlFor="hard">Hard</label>
-                <input id="hard" type="radio" name="difficulty" value="hard" />
+                <label htmlFor="hard"><input id="hard" type="radio" name="difficulty" value="hard" />Hard</label>
                 <br />
                 <input id="textInput" onChange={props.handleChange} type='text' placeholder='player1' /><br />
                 <input type="submit" value="Go" />
@@ -37,24 +37,22 @@ const mapStateToProps = (state, ownProps) => {
 //add an on change to add user name to data
 export const mapDispatchToProps = (dispatch) => {
     return {
-        handleSubmit: async (event, history, data) => {
+        handleSubmit: (event, history, data) => {
             event.preventDefault();
             let difficulty = event.target.difficulty.value;
             let topic = event.target.topic.value;
-            await dispatch(getQuizData(topic, difficulty));
-            // console.log(data.length)
-            if (await data.length === 0) {
-                alert ('Server Error. Please try again')
-                await history.push(`/form/`)
-               
+            dispatch(getQuizData(topic, difficulty));
+            if (data.length === 0) {
+                alert('Server Error. Please try again')
+                history.push(`/form/`)
             }
             else {
-                await  history.push('/quiz/0');
+                history.push('/quiz/0');
             }
         },
         handleChange: (event) => {
             let name = event.target.value;
-            dispatch({ type: 'addUser', payload: name })
+            dispatch({ type: 'addUser', payload: name });
         }
     }
 }
