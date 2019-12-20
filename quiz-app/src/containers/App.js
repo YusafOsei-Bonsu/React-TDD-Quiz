@@ -9,7 +9,7 @@ import Start from '../components/start';
 import Form from '../components/form';
 import Results from './results';
 import { PersistGate } from 'redux-persist/integration/react';
-class App extends Component {
+export class App extends Component {
   componentDidMount() {
     this.props.dispatch(getCatData());
   }

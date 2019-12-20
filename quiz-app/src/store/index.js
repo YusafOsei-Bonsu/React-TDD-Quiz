@@ -9,7 +9,7 @@ const persistConfig = {
     storage,
 };
 // Initialise store
-const initialState = {
+export const initialState = {
     hasErrors: false,
     users: 'User',
     catDropDown: [],
@@ -18,10 +18,10 @@ const initialState = {
 }
 // Initialize reducer. The reducer is the only way to communicate with state.
 // It takes an action creates new state object, then updates the new state object. 
-const reducer = (state = initialState, action) => {
+export const reducer = (state = initialState, action) => {
     switch (action.type) {
         case 'handle-error':
-            return Object.assign({}, state, {score: state.hasErrors = true})
+            return Object.assign({}, state, {hasErrors:true})
         case 'catDropDown':
             // console.log( action.payload)
             return Object.assign({}, state, { catDropDown: action.payload })
