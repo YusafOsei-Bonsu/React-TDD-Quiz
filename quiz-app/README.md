@@ -74,7 +74,7 @@ The entire team worked together on testing
 Jade: <br>
 	Finalising ReadMe file.	<br>
 	Power Point<br>
-	Css (if possible) <br>	
+		
 
 Harry: <br>
 	Tests then work on presentation.<br>
