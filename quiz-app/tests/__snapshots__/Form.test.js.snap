@@ -1,0 +1,80 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Form Component Maps state to props 1`] = `undefined`;
+
+exports[`Form Component MyComponent renders with default props 1`] = `
+<div>
+  <form
+    className="form"
+    onSubmit={[Function]}
+  >
+    <select
+      name="topic"
+    >
+      <option />
+      <option
+        className={9}
+        key="9"
+        value={9}
+      >
+        General Knowledge
+      </option>
+      <option
+        className={10}
+        key="10"
+        value={10}
+      >
+        Entertainment: Books
+      </option>
+    </select>
+    <br />
+    <label
+      htmlFor="easy"
+    >
+      Easy
+    </label>
+    <input
+      id="easy"
+      name="difficulty"
+      type="radio"
+      value="easy"
+    />
+    <br />
+    <label
+      htmlFor="medium"
+    >
+      Medium
+    </label>
+    <input
+      id="medium"
+      name="difficulty"
+      type="radio"
+      value="medium"
+    />
+    <br />
+    <label
+      htmlFor="hard"
+    >
+      Hard
+    </label>
+    <input
+      id="hard"
+      name="difficulty"
+      type="radio"
+      value="hard"
+    />
+    <br />
+    <input
+      id="textInput"
+      onChange={[MockFunction]}
+      placeholder="player1"
+      type="text"
+    />
+    <br />
+    <input
+      type="submit"
+      value="Go"
+    />
+  </form>
+</div>
+`;
