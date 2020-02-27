@@ -1,8 +1,4 @@
-README
-======
-
-
-## The Project 
+# Second Project Week - React TDD Quiz
 
 This is a quiz application that enables users to test their knowledge in over 15 different topics.
 
@@ -21,9 +17,6 @@ This is a quiz application that enables users to test their knowledge in over 15
 ♣	Jade Suzarte @jadesuzarte <br>
 ♣   Yusaf Osei-Bonsu @YusafOsei-Bonsu
 
-
-
-
 ## Daily Plan
 
 Stand-Ups in the kitchen each morning.
@@ -32,7 +25,6 @@ Retros at the end of the day at 17:00 or 17:30.
 Review and comment pull requests.
 
 ### Monday Retro
-
 
 Team 1: Harry and Yusaf
 
@@ -66,29 +58,24 @@ Team 2: Harry and Jade<br>
 •   Started mocking the store.<br>
 •	Added Jest dependencies.
 
-
 ## Thursday Retro 
 The entire team worked together on testing
 
 ## Friday Retro 
 Jade: <br>
 	Finalising ReadMe file.	<br>
-	Power Point<br>
-		
+	Power Point<br>	
 
 Harry: <br>
 	Tests then work on presentation.<br>
-
 
 Yusaf: <br>
 	Styling<br>
 	Roaming<br>
 
-
 Brian: <br>
 	Testing<br>
 	Roaming<br>
-
 
 ## User stories
 
