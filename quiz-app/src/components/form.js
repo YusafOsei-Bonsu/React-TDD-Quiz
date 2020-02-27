@@ -1,7 +1,7 @@
 import React from 'react';
 import '../styles/form.css';
 import { connect } from 'react-redux';
-import { getQuizData } from './api';
+import { getQuizData } from './api/';
 import { useHistory } from 'react-router-dom';
 
 export const Form = (props) => {
