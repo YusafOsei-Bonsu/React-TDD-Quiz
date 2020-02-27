@@ -12,10 +12,10 @@ This is a quiz application that enables users to test their knowledge in over 15
 
 ## Contributors 
 
-♣	Brian Musonza @chipembere<br>
-♣	Harry Pendered Mazer @harry-pm<br>
-♣	Jade Suzarte @jadesuzarte <br>
-♣   Yusaf Osei-Bonsu @YusafOsei-Bonsu
+- [Brian Musonza](https://github.com/chipembere)
+- [Harry Pendered Mazer](https://github.com/harry-pm)
+- [Jade Suzarte](https://github.com/jadesuzarte)
+- [Yusaf Osei-Bonsu](https://github.com/YusafOsei-Bonsu)
 
 ## Daily Plan
 
