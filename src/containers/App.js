@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { getCatData } from '../components/api';
 import { connect } from 'react-redux';
-import '../App.css';
 import Quiz from './quiz';
 import { persistor } from '../store';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
