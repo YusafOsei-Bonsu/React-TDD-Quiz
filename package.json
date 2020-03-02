@@ -23,7 +23,7 @@
   },
   "scripts": {
     "heroku-postbuild": "npm install",
-    "start": "react-scripts start",
+    "start": "nodemon server.js",
     "build": "react-scripts build",
     "test": "jest --config=jest.config.json --watchAll",
     "eject": "react-scripts eject"
