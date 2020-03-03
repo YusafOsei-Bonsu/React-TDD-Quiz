@@ -97,7 +97,7 @@ Brian:
 
 We struggled to deploy the React Quiz onto the Heroku Cloud Platform. Fortunately, we have discovered a way to do so.
   1. We created an Express app (`server.js`) file (in the root directory) which serves a single route...
-      ```
+      ```javascript
       const express = require('express');
       // eslint-disable-next-line no-unused-vars
       const bodyParser = require('body-parser');
