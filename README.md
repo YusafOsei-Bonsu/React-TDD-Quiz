@@ -115,11 +115,11 @@ We struggled to deploy the React Quiz onto the Heroku Cloud Platform. Fortunatel
       - Optionally, you can test if the server runs the React application by entering `node server.js` or `nodemon server.js` in the terminal.
 
   2. In `package.json`, we wrote the following properties...
-    - `engines: { "npm": "6.14.1", "node": "12.13.0" }`.
-    - `"main": "server.js"`.
-    - In the `Scripts` object, we added the following property: `"heroku-postbuild": "npm install"` and modified the `start` script to `"node server.js"`.
+     - `engines: { "npm": "6.14.1", "node": "12.13.0" }`.
+     - `"main": "server.js"`.
+     - In the `Scripts` object, we added the following property: `"heroku-postbuild": "npm install"` and modified the `start` script to `"node server.js"`.
 
-  3. Created a `Procfile` with one line: `web: node server.js`.
+  3. Created a file called `Procfile` (in the root directory) with one line: `web: node server.js`.
 
   4. Entered `npm run build` in the terminal and removed `/build` from `.gitignore` by commenting it out.
 
