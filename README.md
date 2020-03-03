@@ -123,7 +123,9 @@ We struggled to deploy the React Quiz onto the Heroku Cloud Platform. Fortunatel
 
   4. Entered `npm run build` in the terminal and removed `/build` from `.gitignore` by commenting it out.
 
-  5. Committed steps 1-4 to GitHub and Heroku repository. 
+  5. Committed steps 1-4 to GitHub and Heroku repository.
+
+As a guide, we used the following website: [How to Deploy Your React App to Heroku](https://medium.com/better-programming/how-to-deploy-your-react-app-to-heroku-aedc28b218ae).
 
 ## Our Mvp
 Start page
