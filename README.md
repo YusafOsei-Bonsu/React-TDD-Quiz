@@ -4,6 +4,13 @@ View project here: https://react-tdd-quiz.herokuapp.com/
 
 This is a quiz application that enables users to test their knowledge in over 15 different topics.
 
+## Contributors 
+
+- [Brian Musonza](https://github.com/chipembere)
+- [Harry Pendered Mazer](https://github.com/harry-pm)
+- [Jade Suzarte](https://github.com/jadesuzarte)
+- [Yusaf Osei-Bonsu](https://github.com/YusafOsei-Bonsu)
+
 ## Technologies Used
 - React 
 - Redux 
@@ -12,12 +19,19 @@ This is a quiz application that enables users to test their knowledge in over 15
 - CSS
 - Bootstrap
 
-## Contributors 
+## User stories
 
-- [Brian Musonza](https://github.com/chipembere)
-- [Harry Pendered Mazer](https://github.com/harry-pm)
-- [Jade Suzarte](https://github.com/jadesuzarte)
-- [Yusaf Osei-Bonsu](https://github.com/YusafOsei-Bonsu)
+- As a user, I would like a quiz game to test and improve my knowledge.
+
+- As a user, I would like a question with multiple choice answer so I can answer it.
+
+- As a user, I would like to know the results so I can verify my knowledge.
+
+- As a user, I would like to choose a topic so I can answer question on a specific category.
+
+- As a user, I would like to choose level of difficulty so I can match the questions with my knowledge.
+
+- As a user, I would like the option to play multiple times so that I can enjoy myself while I improve my knowledge
 
 ## Daily Plan
 
@@ -77,26 +91,47 @@ Brian:
 - Testing.
 - Roaming.
 
-## User stories
+## Blockers/Resolutions
 
-1. As a user, I would like a quiz game to test and improve my knowledge.
+### Deploying React Quiz to Heroku
 
-2. As a user, I would like a question with multiple choice answer so I can answer it.
+We struggled to deploy the React Quiz onto the Heroku Cloud Platform. Fortunately, we have discovered a way to do so.
+  1. We created an Express app (`server.js`) file (in the root directory) which serves a single route...
+      `const express = require('express');`
+      `// eslint-disable-next-line no-unused-vars`
+      `const bodyParser = require('body-parser');`
+      `const path = require('path');`
+      `const app = express();`
+      `const port = process.env.PORT || 8080;`
+      `app.use(express.static(path.join(__dirname, "build")));`
 
-3. As a user, I would like to know the results so I can verify my knowledge.
+      `This route serves the react app`
+      `app.get('/', (req, res) => res.sendFile(path.resolve(__dirname, "build", "index.html")));`
 
-4. As a user, I would like to choose a topic so I can answer question on a specific category.
+      `app.listen(port, () => console.log(``Server listening on port ${port}``));`
 
-5. As a user, I would like to choose level of difficulty so I can match the questions with my knowledge.
+      - Optionally, you can test if the server runs the React application by entering `node server.js` or `nodemon server.js` in the terminal.
 
-6. As a user, I would like the option to play multiple times so that I can enjoy myself while I improve my knowledge
+  2. In `package.json`, we wrote the following properties...
+    - `engines: { "npm": "6.14.1", "node": "12.13.0" }`.
+    - `"main": "server.js"`.
+    - In the `Scripts` object, we added the following property: `"heroku-postbuild": "npm install"` and modified the `start` script to `"node server.js"`.
 
-	## Our Mvp
-	![GitHub Logo](./public/start_page.png)
-Start page 
-	![GitHub Logo](./public/form_img.png)
-	Form page
-	![GitHub Logo](./public/quiz_img.png)
-	Quiz page
-	![GitHub Logo](./public/result_img.png)
-	Results page
+  3. Created a `Procfile` with one line: `web: node server.js`.
+
+  4. Entered `npm run build` in the terminal and removed `/build` from `.gitignore` by commenting it out.
+
+  5. Committed steps 1-4 to GitHub and Heroku repository. 
+
+## Our Mvp
+Start page
+![GitHub Logo](./public/start_page.png)
+
+Form page
+![GitHub Logo](./public/form_img.png)
+
+Quiz page
+![GitHub Logo](./public/quiz_img.png)
+
+Results page
+![GitHub Logo](./public/result_img.png)
