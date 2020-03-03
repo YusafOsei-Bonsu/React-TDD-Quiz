@@ -1,6 +1,6 @@
 # Second Project Week - React TDD Quiz
 
-View here: https://react-tdd-quiz.herokuapp.com/ 
+View project here: https://react-tdd-quiz.herokuapp.com/ 
 
 This is a quiz application that enables users to test their knowledge in over 15 different topics.
 
