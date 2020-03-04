@@ -106,8 +106,8 @@ We struggled to deploy the React Quiz onto the Heroku Cloud Platform. Fortunatel
       const port = process.env.PORT || 8080;
       app.use(express.static(path.join(__dirname, "build")));
 
-      This route serves the react app`
-      `app.get('/', (req, res) => res.sendFile(path.resolve(__dirname, "build", "index.html")));
+      // This route serves the react app`
+      app.get('/', (req, res) => res.sendFile(path.resolve(__dirname, "build", "index.html")));
 
       app.listen(port, () => console.log(``Server listening on port ${port}``));
       ```
